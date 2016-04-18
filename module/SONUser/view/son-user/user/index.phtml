@@ -1,0 +1,30 @@
+<h3>Usuários</h3>
+
+<a href="<?php echo $this->url('user-admin/default', array('action' => 'novo')) ?>">Novo</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($this->objetos as $objUser): ?>
+        <tr>
+            <td><?php echo $objUser; ?></td>
+            <td><?php echo $objUser->getEmail(); ?></td>
+            <td><a class="btn btn-info" href="
+                   <?php echo $this->url('user-admin/default', 
+                           array('action' => 'alterar', 'id' => $objUser->getId())) ?>">Editar</a>
+                <a class="btn btn-danger" href="
+                   <?php echo $this->url('user-admin/default', 
+                           array('action' => 'deletar', 'id' => $objUser->getId())) ?>">Excluir</a></td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<br />
+
+<?php echo $this->paginationControl($this->objetos, 'Sliding', 'partials/paginator.phtml') ?>

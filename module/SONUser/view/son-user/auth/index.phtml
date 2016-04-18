@@ -1,0 +1,16 @@
+<h3>Login</h3>
+
+<?php if($this->error):?>
+<p>Usuário ou Senha inválidos</p>
+<?php endif; ?>
+<?php
+    
+$objForm = $this->objForm;
+$objForm->setAttribute('action', $this->url('user-auth'));
+
+$objForm->prepare();
+echo $this->form()->openTag($objForm);
+echo '<div class="form-group">' . $this->formRow($objForm->get('email')) . '</div>';
+echo '<div class="form-group">' . $this->formRow($objForm->get('password')) . '</div>';
+echo $this->formSubmit($objForm->get('submit'));
+echo $this->form()->closeTag();

@@ -8,7 +8,10 @@
     ],
     "homepage": "http://framework.zend.com/",
     "require": {
-        "php": ">=5.5",
-        "zendframework/zendframework": "~2.5"
-    }
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*",
+        "doctrine/doctrine-orm-module": "*",
+        "hounddog/doctrine-data-fixture-module": "dev-master",
+        "ircmaxell/random-lib" : "*"
+    }        
 }

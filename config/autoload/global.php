@@ -11,6 +11,18 @@
  * file.
  */
 
+
 return array(
-    // ...
+    'mail' => array(
+        'name' => 'smtp.gmail.com',
+        'host' => 'smtp.gmail.com',
+        'port' => 587,
+        'connection_class' => 'login',
+        'connection_config' => array(
+            'username' => 'iuribrindeiro@gmail.com',
+            'password' => '149595411495NewGirl',
+            'ssl' => 'tls',            
+            'from' => 'iuribrindeiro@gmail.com'
+        )
+    )
 );

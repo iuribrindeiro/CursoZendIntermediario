@@ -1,0 +1,26 @@
+<h3>Registrar</h3>
+
+<?php if($this->mensagens): ?>
+<p>
+    <?php echo $this->mensagens[0]; ?>    
+</p>
+<?php else: ?>
+<?php
+$objForm = $this->objForm;
+
+$objForm->setAttribute('action', $this->url('user-admin/default',
+            array('action' => 'novo')));
+$objForm->prepare();
+echo $this->form()->openTag($objForm);
+echo $this->formHidden($objForm->get('id'));
+echo '<div class="form-group">' . $this->formRow($objForm->get('nome')) . '</div>';
+echo '<div class="form-group">' . $this->formRow($objForm->get('email')) . '</div>';
+echo '<div class="form-group">' . $this->formRow($objForm->get('password')) . '</div>';
+echo '<div class="form-group">' . $this->formRow($objForm->get('confirmacao')) . '</div>';
+echo $this->formHidden($objForm->get('security'));
+echo $this->formSubmit($objForm->get('submit'));
+
+echo $this->form()->closeTag();
+
+?>
+<?php endif; ?>
